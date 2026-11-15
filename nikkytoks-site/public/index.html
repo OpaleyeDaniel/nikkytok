@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIKKYTOKS VENTURES | Industrial Equipment, Generators, Solar & Tools Platform</title>
+  <meta name="description" content="Next-generation industrial procurement platform for Elepaq, Mikano, and Sumec Firman generators, solar inverters, Nexans armoured cables, INGCO power tools, and industrial lubricants in Lagos, Nigeria.">
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+  
+  <!-- Modern Typography from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Background Effects -->
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+  <div class="bg-grid-overlay" aria-hidden="true"></div>
+
+  <!-- Corporate Top Bar -->
+  <aside class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-item">
+        <span class="pulse-indicator"></span>
+        <span class="topbar-text"><strong>NIKKYTOKS VENTURES</strong> &bull; RC: 3466507 &bull; Federal Republic of Nigeria</span>
+      </div>
+      <div class="topbar-item topbar-locations">
+        <svg class="svg-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Central Hubs: Ilasamaja &amp; Ibeju Lekki, Lagos</span>
+      </div>
+      <div class="topbar-item topbar-contact">
+        <svg class="svg-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Direct Procurement: <a href="tel:08028278993">08028278993</a> | <a href="tel:08124002501">08124002501</a></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky SaaS Glass Header -->
+  <header class="header">
+    <div class="header-inner">
+      <!-- Brand Logo & Identity -->
+      <a href="/" class="brand-link" aria-label="NIKKYTOKS VENTURES Home">
+        <div class="brand-logo-frame">
+          <img src="/assets/logo.jpg" alt="NIKKYTOKS VENTURES Official Logo" class="brand-logo" width="120" height="42">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">NIKKYTOKS</span>
+          <span class="brand-subtitle">INDUSTRIAL VENTURES</span>
+        </div>
+      </a>
+
+      <!-- Quick Jump Navigation Pill Bar -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#inventory" class="nav-item">Catalogue</a>
+        <a href="#categories" class="nav-item">Categories</a>
+        <a href="#showroom" class="nav-item">Showroom</a>
+        <a href="#bulk" class="nav-item">Enterprise RFQ</a>
+        <a href="#locations" class="nav-item">Warehouses</a>
+      </nav>
+
+      <!-- Header Search & Actions -->
+      <div class="header-actions">
+        <!-- Live Instant Search Input -->
+        <div class="search-container">
+          <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input id="search" type="search" placeholder="Search catalog..." aria-label="Search industrial products">
+          <kbd class="search-kbd" title="Press forward slash to focus">/</kbd>
+        </div>
+
+        <!-- RFQ Quote Basket Pill -->
+        <button id="openRfqBtn" class="rfq-pill-btn" aria-label="Open Quote Builder Drawer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+          <span>RFQ</span>
+          <span id="rfqCountBadge" class="rfq-badge">0</span>
+        </button>
+
+        <!-- Direct WhatsApp CTA -->
+        <a id="navwa" href="#contact" class="btn btn-primary nav-wa-btn" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SaaS Hero Section -->
+    <section class="hero-section" id="hero">
+      <!-- Ambient Lighting & Blueprint Grid -->
+      <div class="hero-ambient-glow" aria-hidden="true"></div>
+      <div class="hero-ambient-mesh" aria-hidden="true"></div>
+      
+      <div class="hero-container">
+        <!-- Dual-Wing Master Grid -->
+        <div class="hero-grid">
+          
+          <!-- Left Wing: Value Proposition & High-Converting CTA Suite -->
+          <div class="hero-pitch-column">
+            <!-- Animated Innovation Pill -->
+            <a href="#locations" class="hero-announcement" aria-label="Official Nigerian Industrial Hub Information">
+              <span class="announcement-beacon">
+                <span class="beacon-pulse"></span>
+                <span class="beacon-dot"></span>
+              </span>
+              <span class="announcement-tag">LAGOS INDUSTRIAL HUB</span>
+              <span class="announcement-sep" aria-hidden="true">/</span>
+              <span class="announcement-text">Same-Day Site Dispatch</span>
+              <span class="announcement-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+
+            <!-- High-Impact SaaS Headline -->
+            <h1 class="hero-title">
+              The Modern Supply Chain for <span class="highlight-gradient">Industrial Power &amp; Heavy Tools</span>
+            </h1>
+
+            <!-- Authoritative Value Proposition Copy (Spacious & Clean) -->
+            <p class="hero-lead">
+              Your direct procurement partner for genuine industrial power, certified cabling, solar systems, and heavy workshop tools across Nigeria.
+            </p>
+
+            <!-- Key Capability Tags (Airy, Scannable Highlights) -->
+            <div class="hero-capability-pills">
+              <span class="cap-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>Mikano &amp; Firman Gensets</span>
+              </span>
+              <span class="cap-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/></svg>
+                <span>Hybrid Solar Inverters</span>
+              </span>
+              <span class="cap-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 2v6"/><path d="M18 8v5a6 6 0 0 1-12 0V8z"/></svg>
+                <span>Nexans 100% Copper Cables</span>
+              </span>
+            </div>
+
+            <!-- Conversion Action Suite -->
+            <div class="hero-cta-group">
+              <a href="#inventory" class="btn btn-primary btn-lg btn-hero-main">
+                <span>Explore Live Inventory</span>
+                <span class="btn-count-chip">500+ SKUs</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+
+              <button id="heroRfqTrigger" class="btn btn-secondary btn-lg btn-hero-rfq" aria-label="Build Enterprise RFQ">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+                <span>Build Fast RFQ</span>
+                <span class="rfq-hotkey-badge">Quote</span>
+              </button>
+
+              <a id="herowa" href="#contact" class="btn btn-outline btn-lg btn-hero-wa" target="_blank" rel="noopener">
+                <span class="wa-status-dot"></span>
+                <span>Desk Online (Avg 4m)</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              </a>
+            </div>
+
+            <!-- Social Proof & Verification Bar -->
+            <div class="hero-trust-strip">
+              <div class="trust-rating-group">
+                <div class="contractor-avatar-stack" aria-label="Verified Nigerian Contractors">
+                  <span class="avatar-circle av-1">ENG</span>
+                  <span class="avatar-circle av-2">CON</span>
+                  <span class="avatar-circle av-3">FAC</span>
+                  <span class="avatar-circle av-4">+1.2k</span>
+                </div>
+                <div class="trust-stars-wrap">
+                  <div class="trust-stars" aria-label="5 star rating">★★★★★</div>
+                  <span class="trust-score"><strong>4.9 / 5</strong> &bull; 1,200+ Contractors</span>
+                </div>
+              </div>
+
+              <div class="trust-bullet-row">
+                <span class="trust-bullet">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>100% Pure Copper Windings</span>
+                </span>
+                <span class="trust-bullet">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>OEM Manufacturer Guarantee</span>
+                </span>
+                <span class="trust-bullet">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Official Invoices &amp; Waybills</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Wing: Interactive SaaS Equipment Command Cockpit -->
+          <div class="hero-cockpit-column">
+            <div class="saas-cockpit-frame">
+              <!-- Window Chrome Bar -->
+              <div class="cockpit-chrome">
+                <div class="chrome-controls">
+                  <span class="control-dot red"></span>
+                  <span class="control-dot yellow"></span>
+                  <span class="control-dot green"></span>
+                </div>
+
+                <!-- Interactive View Switcher Tabs -->
+                <div class="cockpit-tab-bar" role="tablist" aria-label="Cockpit Display Views">
+                  <button class="cockpit-tab active" data-cockpit-target="showroom" role="tab" aria-selected="true">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20v14H2z"/><circle cx="12" cy="10" r="3"/><path d="m2 17 6-4 4 3 6-5 4 3"/></svg>
+                    <span>Showroom Radar</span>
+                  </button>
+                  <button class="cockpit-tab" data-cockpit-target="power" role="tab" aria-selected="false">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <span>Power &amp; Solar</span>
+                  </button>
+                  <button class="cockpit-tab" data-cockpit-target="tools" role="tab" aria-selected="false">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/></svg>
+                    <span>Tools &amp; Cables</span>
+                  </button>
+                </div>
+
+                <!-- Window Action Tools -->
+                <div class="chrome-actions">
+                  <span class="radar-live-tag">
+                    <span class="radar-pulse-dot"></span>
+                    <span>LIVE RADAR</span>
+                  </span>
+                  <button id="viewShowroomBannerBtn" class="btn-cockpit-expand" title="Expand High-Res Panorama Lightbox" aria-label="Expand High-Res Panorama Lightbox">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Cockpit Panes Viewport -->
+              <div class="cockpit-viewport">
+                <!-- Pane 1: Showroom Interactive Radar (Default) -->
+                <div class="cockpit-pane active" id="pane-showroom" role="tabpanel">
+                  <div class="showroom-viewport-media">
+                    <img src="/assets/showroom-banner.jpg" alt="NIKKYTOKS VENTURES Warehouse Showroom displaying Generators, Solar Systems, Cables and Tools" class="cockpit-showroom-img" width="1536" height="461" fetchpriority="high">
+                    
+                    <!-- Interactive Hotspot Overlays with Rich Cards (Cleanly Positioned on Equipment) -->
+                    <div class="cockpit-hotspots-layer">
+                      <div class="cockpit-hotspot" style="top: 30%; left: 45%;">
+                        <div class="hotspot-trigger" tabindex="0" role="button" aria-label="Mikano &amp; Elepaq Gensets Hotspot">
+                          <span class="hotspot-radar-ring"></span>
+                          <span class="hotspot-center-dot"></span>
+                        </div>
+                        <div class="hotspot-popover">
+                          <span class="popover-badge">Core Power</span>
+                          <h5 class="popover-title">Mikano &amp; Elepaq Gensets</h5>
+                          <p class="popover-meta">5.5kVA – 100kVA Soundproof &bull; 100% Copper</p>
+                          <a href="#inventory" class="popover-link">View Models &rarr;</a>
+                        </div>
+                      </div>
+
+                      <div class="cockpit-hotspot" style="top: 26%; right: 18%;">
+                        <div class="hotspot-trigger" tabindex="0" role="button" aria-label="Hybrid Solar &amp; Inverters Hotspot">
+                          <span class="hotspot-radar-ring"></span>
+                          <span class="hotspot-center-dot"></span>
+                        </div>
+                        <div class="hotspot-popover">
+                          <span class="popover-badge">Clean Energy</span>
+                          <h5 class="popover-title">Solar &amp; Pure Sine Inverters</h5>
+                          <p class="popover-meta">Growatt &amp; Felicity &bull; 5kW–15kW LiFePO4</p>
+                          <a href="#inventory" class="popover-link">View Systems &rarr;</a>
+                        </div>
+                      </div>
+
+                      <div class="cockpit-hotspot" style="bottom: 18%; left: 56%;">
+                        <div class="hotspot-trigger" tabindex="0" role="button" aria-label="INGCO &amp; Bosch Power Tools Hotspot">
+                          <span class="hotspot-radar-ring"></span>
+                          <span class="hotspot-center-dot"></span>
+                        </div>
+                        <div class="hotspot-popover">
+                          <span class="popover-badge">Heavy Duty</span>
+                          <h5 class="popover-title">INGCO &amp; Bosch Tools</h5>
+                          <p class="popover-meta">Industrial Drills, Grinders &amp; Hammers</p>
+                          <a href="#inventory" class="popover-link">View Power Tools &rarr;</a>
+                        </div>
+                      </div>
+
+                      <div class="cockpit-hotspot" style="bottom: 18%; right: 12%;">
+                        <div class="hotspot-trigger" tabindex="0" role="button" aria-label="Nexans Armoured Cabling Hotspot">
+                          <span class="hotspot-radar-ring"></span>
+                          <span class="hotspot-center-dot"></span>
+                        </div>
+                        <div class="hotspot-popover">
+                          <span class="popover-badge">Certified Copper</span>
+                          <h5 class="popover-title">Nexans Armoured Cables</h5>
+                          <p class="popover-meta">16mm² – 95mm² 4-Core SWA &bull; Pure Copper</p>
+                          <a href="#inventory" class="popover-link">View Cables &rarr;</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pane 2: Power & Solar Spec Cockpit -->
+                <div class="cockpit-pane" id="pane-power" role="tabpanel" hidden>
+                  <div class="spec-deck-grid">
+                    <div class="spec-deck-card">
+                      <div class="spec-deck-header">
+                        <span class="spec-deck-chip chip-amber">Heavy Industrial Genset</span>
+                        <span class="spec-stock-status">In Stock &bull; Ilasamaja Hub</span>
+                      </div>
+                      <h4 class="spec-deck-title">Mikano 30kVA Perkins Diesel Genset</h4>
+                      <div class="spec-deck-table">
+                        <div class="spec-row"><span>Engine</span><strong>Perkins 1103A-33G1</strong></div>
+                        <div class="spec-row"><span>Phase / Voltage</span><strong>3-Phase 415V / 50Hz</strong></div>
+                        <div class="spec-row"><span>Alternator</span><strong>Stamford 100% Pure Copper</strong></div>
+                        <div class="spec-row"><span>Canopy</span><strong>Heavy Gauge Soundproof Enclosure</strong></div>
+                      </div>
+                      <div class="spec-deck-footer">
+                        <span class="spec-assurance-badge">✓ Certified OEM Inspection Seal</span>
+                        <a href="#inventory" class="btn btn-sm btn-primary">Check Unit Price</a>
+                      </div>
+                    </div>
+
+                    <div class="spec-deck-card">
+                      <div class="spec-deck-header">
+                        <span class="spec-deck-chip chip-cyan">Pure Sine Wave Solar</span>
+                        <span class="spec-stock-status">In Stock &bull; Lekki Hub</span>
+                      </div>
+                      <h4 class="spec-deck-title">Felicity / Growatt 5kW 48V Hybrid Solar Kit</h4>
+                      <div class="spec-deck-table">
+                        <div class="spec-row"><span>Rated Capacity</span><strong>5000W Pure Sine Continuous</strong></div>
+                        <div class="spec-row"><span>Solar MPPT</span><strong>Dual 100A (Up to 6000W PV)</strong></div>
+                        <div class="spec-row"><span>Storage Battery</span><strong>10.2kWh LiFePO4 Lithium Bank</strong></div>
+                        <div class="spec-row"><span>Switching Time</span><strong>&lt; 10ms (Zero PC / Appliance Restart)</strong></div>
+                      </div>
+                      <div class="spec-deck-footer">
+                        <span class="spec-assurance-badge">✓ 5-Year Factory Warranty</span>
+                        <a href="#inventory" class="btn btn-sm btn-primary">Check System Price</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pane 3: Tools & Cabling Spec Cockpit -->
+                <div class="cockpit-pane" id="pane-tools" role="tabpanel" hidden>
+                  <div class="spec-deck-grid">
+                    <div class="spec-deck-card">
+                      <div class="spec-deck-header">
+                        <span class="spec-deck-chip chip-emerald">Electrolytic Copper Feeder</span>
+                        <span class="spec-stock-status">In Stock &bull; Full Drums Available</span>
+                      </div>
+                      <h4 class="spec-deck-title">Nexans 4-Core 25mm² XLPE Steel Wire Armoured Cable</h4>
+                      <div class="spec-deck-table">
+                        <div class="spec-row"><span>Conductor Material</span><strong>100% Pure High-Conductivity Copper</strong></div>
+                        <div class="spec-row"><span>Armouring</span><strong>Galvanized Steel Wire (SWA) Heavy</strong></div>
+                        <div class="spec-row"><span>Voltage Rating</span><strong>600 / 1000V Certified</strong></div>
+                        <div class="spec-row"><span>Standard Compliance</span><strong>BS 5467 / IEC 60502-1</strong></div>
+                      </div>
+                      <div class="spec-deck-footer">
+                        <span class="spec-assurance-badge">✓ Guaranteed Zero CCA Adulteration</span>
+                        <a href="#inventory" class="btn btn-sm btn-primary">Order Per Meter / Coil</a>
+                      </div>
+                    </div>
+
+                    <div class="spec-deck-card">
+                      <div class="spec-deck-header">
+                        <span class="spec-deck-chip chip-amber">Industrial Demolition Tool</span>
+                        <span class="spec-stock-status">In Stock &bull; Direct Import</span>
+                      </div>
+                      <h4 class="spec-deck-title">INGCO 1500W SDS-Plus Industrial Rotary Hammer</h4>
+                      <div class="spec-deck-table">
+                        <div class="spec-row"><span>Motor Rating</span><strong>1500W Copper Wire Industrial Grade</strong></div>
+                        <div class="spec-row"><span>Impact Force</span><strong>5.5 Joules High-Energy Strike</strong></div>
+                        <div class="spec-row"><span>Drilling Capacity</span><strong>32mm Solid Concrete / Stone</strong></div>
+                        <div class="spec-row"><span>Accessories Included</span><strong>3 Chisels, 2 Drills + Carrying Case</strong></div>
+                      </div>
+                      <div class="spec-deck-footer">
+                        <span class="spec-assurance-badge">✓ 1-Year Official Warranty</span>
+                        <a href="#inventory" class="btn btn-sm btn-primary">Check Tool Price</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating 3D Depth Badges (Positioned Safely Below Frame) -->
+              <div class="cockpit-floating-badges" aria-hidden="true">
+                <!-- Bottom Left: Live Dispatch Feed -->
+                <div class="floating-badge badge-bottom-left">
+                  <span class="dispatch-pulse-dot"></span>
+                  <div class="floating-badge-content">
+                    <span class="floating-badge-title" id="heroLiveDispatchTicker">50mm Nexans Armoured Cable dispatched to Lekki Phase 1</span>
+                    <span class="floating-badge-sub">Lagos Express Freight &bull; Just now</span>
+                  </div>
+                </div>
+
+                <!-- Bottom Right: OEM Verification Badge -->
+                <div class="floating-badge badge-bottom-right">
+                  <div class="floating-badge-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                  </div>
+                  <div class="floating-badge-content">
+                    <span class="floating-badge-title">Direct OEM Authorized</span>
+                    <span class="floating-badge-sub">Mikano &bull; Firman &bull; INGCO &bull; Nexans</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Integrated SaaS Bento Telemetry Deck -->
+        <div class="hero-bento-strip">
+          <div class="bento-card">
+            <div class="bento-top">
+              <span class="bento-metric">500+</span>
+              <div class="bento-icon-frame">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+              </div>
+            </div>
+            <h4 class="bento-title">Genuine Industrial SKUs</h4>
+            <p class="bento-desc">Comprehensive inventory from 1kVA portable gensets to 100kVA industrial diesel, solar kits &amp; heavy cabling.</p>
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-top">
+              <span class="bento-metric">100%</span>
+              <div class="bento-icon-frame">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+            </div>
+            <h4 class="bento-title">Pure Copper Windings</h4>
+            <p class="bento-desc">Zero counterfeit, zero CCA wiring. Every generator and cable is strictly verified against OEM factory specs.</p>
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-top">
+              <span class="bento-metric">2 Hubs</span>
+              <div class="bento-icon-frame">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7a5 5 0 0 1-10 0 5 5 0 0 1-10 0"/></svg>
+              </div>
+            </div>
+            <h4 class="bento-title">Central Lagos Showrooms</h4>
+            <p class="bento-desc">Central hub at 17 Ifelodun St, Ilasamaja &amp; island logistics depot in Lekki. Walk-in testing and pickups welcomed.</p>
+          </div>
+
+          <div class="bento-card">
+            <div class="bento-top">
+              <span class="bento-metric">&lt; 24hr</span>
+              <div class="bento-icon-frame">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </div>
+            </div>
+            <h4 class="bento-title">Express Nigeria Dispatch</h4>
+            <p class="bento-desc">Same-day express van delivery across Lagos; insured nationwide logistics to all 36 Nigerian states.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flowing Continuous OEM Partner Brands Marquee Strip -->
+    <section class="brands-marquee-section" aria-label="Official OEM Distribution Partners">
+      <div class="brands-marquee-header">
+        <span class="eyebrow">OFFICIAL OEM DISTRIBUTIONS &amp; CERTIFIED PARTNERS</span>
+      </div>
+
+      <!-- Flowing Single-Line Marquee Track with Left & Right Gradient Fade -->
+      <div class="brands-marquee-container">
+        <div class="brands-marquee-track">
+          <!-- Primary Sequence (User's Exact Real Logos, Fully Transparent, Light Theme Balanced) -->
+          <div class="brand-item" title="INGCO Industrial Power Tools">
+            <img src="/assets/brands/ingco_real.png" alt="INGCO - Make The World In Your Hands" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="ELEPAQ Power Generators">
+            <img src="/assets/brands/elepaq.svg" alt="ELEPAQ Constant Power" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="MIKANO Heavy Power Generators">
+            <img src="/assets/brands/mikano_real.png" alt="MIKANO International Limited" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="SUMEC FIRMAN Power Generation">
+            <img src="/assets/brands/firman_real.png" alt="FIRMAN For Quality Living" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="LUMINOUS Inverters &amp; Solar">
+            <img src="/assets/brands/luminous.svg" alt="LUMINOUS Inverters &amp; Solar" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="NEXANS Certified Industrial Cables">
+            <img src="/assets/brands/nexans.svg" alt="NEXANS Cables" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="TOTAL QUARTZ Engine Lubricants">
+            <img src="/assets/brands/total_quartz_real.png" alt="TOTAL QUARTZ Lubricants" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="VALVOLINE High Performance Lubricants">
+            <img src="/assets/brands/valvoline_real.png" alt="VALVOLINE" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="BOSCH Power Tools &amp; Industrial Technology">
+            <img src="/assets/brands/bosch.svg" alt="BOSCH Industrial" class="brand-logo-img" />
+          </div>
+
+          <!-- Seamless Duplicate Loop on a Straight Line -->
+          <div class="brand-item" title="INGCO Industrial Power Tools" aria-hidden="true">
+            <img src="/assets/brands/ingco_real.png" alt="INGCO - Make The World In Your Hands" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="ELEPAQ Power Generators" aria-hidden="true">
+            <img src="/assets/brands/elepaq.svg" alt="ELEPAQ Constant Power" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="MIKANO Heavy Power Generators" aria-hidden="true">
+            <img src="/assets/brands/mikano_real.png" alt="MIKANO International Limited" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="SUMEC FIRMAN Power Generation" aria-hidden="true">
+            <img src="/assets/brands/firman_real.png" alt="FIRMAN For Quality Living" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="LUMINOUS Inverters &amp; Solar" aria-hidden="true">
+            <img src="/assets/brands/luminous.svg" alt="LUMINOUS Inverters &amp; Solar" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="NEXANS Certified Industrial Cables" aria-hidden="true">
+            <img src="/assets/brands/nexans.svg" alt="NEXANS Cables" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="TOTAL QUARTZ Engine Lubricants" aria-hidden="true">
+            <img src="/assets/brands/total_quartz_real.png" alt="TOTAL QUARTZ Lubricants" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="VALVOLINE High Performance Lubricants" aria-hidden="true">
+            <img src="/assets/brands/valvoline_real.png" alt="VALVOLINE" class="brand-logo-img" />
+          </div>
+          <div class="brand-item" title="BOSCH Power Tools &amp; Industrial Technology" aria-hidden="true">
+            <img src="/assets/brands/bosch.svg" alt="BOSCH Industrial" class="brand-logo-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Matrix Section -->
+    <section id="categories" class="section categories-section">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">EQUIPMENT CATEGORIES</span>
+          <h2 class="section-title">Engineered for Contractors, Factories &amp; Homes.</h2>
+          <p class="section-subtitle">Select any category to instantly filter current warehouse inventory.</p>
+        </div>
+        <a href="#inventory" class="btn btn-outline">
+          <span>View All Inventory &darr;</span>
+        </a>
+      </div>
+
+      <div class="categories-matrix" id="categoryCards">
+        <!-- Dynamically injected category cards with SVG icons -->
+      </div>
+    </section>
+
+    <!-- Core Product Catalogue / SaaS Inventory Grid -->
+    <section id="inventory" class="section inventory-section">
+      <div class="inventory-header-panel">
+        <div class="section-header-compact">
+          <span class="eyebrow">VERIFIED WAREHOUSE CATALOGUE</span>
+          <h2 class="section-title">Live Product Inventory</h2>
+          <p class="section-subtitle">Inspect technical specifications, add items to your RFQ quote list, or enquire via WhatsApp.</p>
+        </div>
+
+        <!-- Filter & Control Toolbar -->
+        <div class="inventory-controls">
+          <div class="control-search">
+            <svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input id="subSearch" type="search" placeholder="Filter by model, brand, or spec..." aria-label="Filter catalogue products">
+          </div>
+
+          <div class="control-select-wrap">
+            <select id="filter" aria-label="Filter by equipment category">
+              <option value="">All Categories (17+ SKUs)</option>
+            </select>
+          </div>
+
+          <label class="toggle-control" title="Show only immediately available items">
+            <input type="checkbox" id="stockOnlyToggle">
+            <span class="toggle-track"></span>
+            <span class="toggle-label">In-Stock Only</span>
+          </label>
+        </div>
+
+        <!-- Filter Status Bar -->
+        <div class="filter-status-bar">
+          <span id="productCountLabel" class="count-tag">Loading inventory...</span>
+          <div id="activeFilterTags" class="active-filter-tags"></div>
+        </div>
+      </div>
+
+      <!-- Live Dynamic Product Grid -->
+      <div id="grid" class="product-grid">
+        <!-- Dynamically populated product cards -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty" class="empty-state" hidden>
+        <div class="empty-icon">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <h3>No matching industrial equipment found</h3>
+        <p>Try modifying your search query or selecting "All Categories".</p>
+        <button id="resetSearchBtn" class="btn btn-secondary">Reset Filters</button>
+      </div>
+    </section>
+
+    <!-- Enterprise Bulk Procurement Section -->
+    <section id="bulk" class="section bulk-section">
+      <div class="bulk-card">
+        <div class="bulk-content">
+          <div class="bulk-badge">
+            <svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            <span>B2B &amp; CONTRACTOR SUPPLY</span>
+          </div>
+          <h2 class="bulk-title">Planning an Enterprise Procurement or Site Installation?</h2>
+          <p class="bulk-lead">
+            We partner with electrical contractors, facility managers, oilfield support teams, and construction firms for turn-key generator supplies, armoured cable drum deliveries, and regular fleet lubricant drops.
+          </p>
+
+          <div class="bulk-features">
+            <div class="bulk-feature-item">
+              <span class="feature-check">
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span><strong>Consolidated Invoicing:</strong> Official corporate receipts &amp; tax compliance</span>
+            </div>
+            <div class="bulk-feature-item">
+              <span class="feature-check">
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span><strong>Factory Drum Packaging:</strong> 208L oil drums &amp; 500m cable reels</span>
+            </div>
+            <div class="bulk-feature-item">
+              <span class="feature-check">
+                <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span><strong>Dedicated Logistics:</strong> Site dispatch across Lagos and nationwide</span>
+            </div>
+          </div>
+
+          <div class="bulk-actions">
+            <a id="bulkWa" href="#contact" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+              <span>Request Wholesale Quotation ↗</span>
+            </a>
+            <button id="quickRfqFromBulk" class="btn btn-secondary btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+              <span>Open RFQ Builder</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="bulk-visual">
+          <div class="bulk-stat-card">
+            <div class="stat-icon">
+              <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h4>Heavy Power Delivery</h4>
+            <p>From 10kVA to 2,000kVA soundproof gensets with complete ATS automation.</p>
+          </div>
+          <div class="bulk-stat-card">
+            <div class="stat-icon">
+              <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 2v6"/><path d="M18 8v5a6 6 0 0 1-12 0V8z"/></svg>
+            </div>
+            <h4>Armoured Cabling</h4>
+            <p>Full reels of XLPE/SWA/PVC copper conductors cut to engineering specifications.</p>
+          </div>
+          <div class="bulk-stat-card">
+            <div class="stat-icon">
+              <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l1 5H5l1-5z"/><path d="M5 8v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"/><path d="M10 13h4"/><path d="M12 11v4"/></svg>
+            </div>
+            <h4>Fleet Lubrication</h4>
+            <p>Bulk Total Quartz &amp; Valvoline engine oils for logistics fleets and heavy machinery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showroom & Genuine Authenticity Section -->
+    <section id="showroom" class="section showroom-section">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">PHYSICAL WAREHOUSE NETWORK</span>
+          <h2 class="section-title">See the Equipment in Person.</h2>
+          <p class="section-subtitle">Walk in to inspect stock, test run generators, and discuss technical parameters with our engineers.</p>
+        </div>
+      </div>
+
+      <div class="showroom-split">
+        <div class="showroom-banner-card">
+          <img src="/assets/showroom-banner.jpg" alt="NIKKYTOKS Showroom Inventory" class="showroom-banner-img" width="800" height="400">
+          <div class="showroom-banner-badge">
+            <svg class="svg-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <span>Verified Physical Stock</span>
+          </div>
+        </div>
+
+        <div class="showroom-info-card">
+          <div class="company-brand-badge">
+            <img src="/assets/logo.jpg" alt="NIKKYTOKS VENTURES" class="company-badge-logo" width="80" height="40">
+            <div>
+              <h3>NIKKYTOKS VENTURES</h3>
+              <p>Registered Corporate Entity &bull; RC: 3466507</p>
+            </div>
+          </div>
+
+          <ul class="authenticity-list">
+            <li>
+              <strong>100% Copper Windings Guaranteed:</strong>
+              <span>Every generator supplied is verified for pure copper stator and rotor coils.</span>
+            </li>
+            <li>
+              <strong>Original Manufacturer Warranty:</strong>
+              <span>Direct factory backing on INGCO tools, Mikano gensets, and Luminous inverters.</span>
+            </li>
+            <li>
+              <strong>Pre-Delivery Inspection (PDI):</strong>
+              <span>Generators are tested, fueled, and inspected before handover.</span>
+            </li>
+          </ul>
+
+          <div class="showroom-cta-row">
+            <a href="tel:08028278993" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>Call Sales Desk: 08028278993</span>
+            </a>
+            <a href="#locations" class="btn btn-outline">View Warehouse Locations &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Locations & Direct Contact Section -->
+    <section id="locations" class="section locations-section">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">DIRECT PROCUREMENT &amp; WAREHOUSES</span>
+          <h2 class="section-title">Visit Our Lagos Showrooms</h2>
+          <p class="section-subtitle">Our logistics team handles dispatches across Lagos Island, Mainland, and interstate routes daily.</p>
+        </div>
+      </div>
+
+      <div class="locations-grid">
+        <!-- Head Office Card -->
+        <div class="location-card">
+          <div class="location-badge">HEAD OFFICE &amp; CENTRAL STORE</div>
+          <h3 class="location-name">Ilasamaja Industrial Hub</h3>
+          <p class="location-address" id="head">17 Ifelodun Street, Ilasamaja, Oshodi-Isolo, Lagos</p>
+          <div class="location-details">
+            <div class="detail-row">
+              <span class="detail-title">Opening Hours:</span>
+              <span id="hours">Mon &ndash; Sat: 8:00 AM &ndash; 6:30 PM</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-title">Direct Hotline:</span>
+              <span><a href="tel:08028278993" class="phone-link">08028278993</a></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-title">Operations:</span>
+              <span>Full generator showroom, cable spool yard &amp; tool storage</span>
+            </div>
+          </div>
+          <a id="contactwa1" href="#contact" class="btn btn-outline btn-full" target="_blank" rel="noopener">
+            Chat with Ilasamaja Team ↗
+          </a>
+        </div>
+
+        <!-- Branch Office Card -->
+        <div class="location-card">
+          <div class="location-badge">LEKKI &amp; ISLAND BRANCH</div>
+          <h3 class="location-name">Ibeju Lekki Commercial Hub</h3>
+          <p class="location-address" id="branch">Shop 10, Alahun Bus Stop, Ibeju Lekki, Lagos</p>
+          <div class="location-details">
+            <div class="detail-row">
+              <span class="detail-title">Opening Hours:</span>
+              <span>Mon &ndash; Sat: 8:30 AM &ndash; 6:00 PM</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-title">Direct Hotline:</span>
+              <span><a href="tel:08124002501" class="phone-link">08124002501</a></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-title">Operations:</span>
+              <span>Direct retail counter, contractor pickup &amp; fast island dispatch</span>
+            </div>
+          </div>
+          <a id="contactwa2" href="#contact" class="btn btn-outline btn-full" target="_blank" rel="noopener">
+            Chat with Lekki Team ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern SaaS Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand-col">
+        <div class="footer-logo-wrap">
+          <img src="/assets/logo.jpg" alt="NIKKYTOKS VENTURES" class="footer-logo" width="140" height="50">
+        </div>
+        <p class="footer-desc">
+          Official Nigerian distributor for industrial power generation, hybrid solar energy, high-voltage cabling, precision power tools, and high-performance lubricants.
+        </p>
+        <div class="footer-meta">
+          <span class="badge-rc">RC: 3466507</span>
+          <span>Lagos, Nigeria</span>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Product Lines</h4>
+        <a href="#inventory" class="footer-link">Generators (Elepaq &amp; Mikano)</a>
+        <a href="#inventory" class="footer-link">Solar &amp; Hybrid Inverters</a>
+        <a href="#inventory" class="footer-link">Armoured Copper Cables</a>
+        <a href="#inventory" class="footer-link">Power Tools (INGCO &amp; Bosch)</a>
+        <a href="#inventory" class="footer-link">Industrial Water Pumps</a>
+        <a href="#inventory" class="footer-link">Total &amp; Valvoline Engine Oils</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Procurement</h4>
+        <a href="#bulk" class="footer-link">Enterprise Bulk Quotation</a>
+        <a href="#showroom" class="footer-link">Showroom Virtual Inspection</a>
+        <a href="#categories" class="footer-link">Browse All Categories</a>
+        <a href="#locations" class="footer-link">Warehouse Hubs</a>
+        <a href="/admin" class="footer-link admin-portal-link" target="_blank">Staff Admin Portal &rarr;</a>
+      </div>
+
+      <div class="footer-contact-col">
+        <h4>Support &amp; Enquiries</h4>
+        <p class="footer-contact-p">
+          <strong>Direct Lines:</strong><br>
+          <a href="tel:08028278993">08028278993</a> &bull; <a href="tel:08124002501">08124002501</a>
+        </p>
+        <p class="footer-contact-p">
+          <strong>Central Warehouse:</strong><br>
+          17 Ifelodun Street, Ilasamaja, Lagos
+        </p>
+        <a id="footerwa" href="#contact" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+          WhatsApp Sales Desk ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2026</span> NIKKYTOKS VENTURES (RC: 3466507). All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <span>Genuine OEM Equipment</span> &bull;
+        <span>Lagos &bull; Abuja &bull; Nationwide</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Detail Modal Dialog -->
+  <dialog id="detail" class="saas-dialog">
+    <div class="dialog-inner">
+      <button id="close" class="dialog-close-btn" aria-label="Close product details">&times;</button>
+      <div id="detailContent" class="dialog-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Showroom Banner Lightbox Modal -->
+  <dialog id="showroomModal" class="saas-dialog dialog-wide">
+    <div class="dialog-inner">
+      <button id="closeShowroom" class="dialog-close-btn" aria-label="Close showroom lightbox">&times;</button>
+      <div class="dialog-showroom-wrap">
+        <h3 class="dialog-showroom-title">NIKKYTOKS VENTURES Warehouse &amp; Showroom Panorama</h3>
+        <p class="dialog-showroom-sub">Genuine equipment inventory stored at Ilasamaja &amp; Ibeju Lekki hubs, Lagos.</p>
+        <div class="showroom-full-img-container">
+          <img src="/assets/showroom-banner.jpg" alt="Showroom Panorama Full Resolution" class="showroom-full-img">
+        </div>
+        <div class="dialog-showroom-actions">
+          <a id="showroomWaEnquire" href="#contact" class="btn btn-primary" target="_blank" rel="noopener">
+            Enquire about Equipment in Photo ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Slide-out RFQ Quote Builder Drawer -->
+  <aside id="rfqDrawer" class="rfq-drawer" aria-hidden="true">
+    <div class="rfq-drawer-overlay" id="rfqDrawerOverlay"></div>
+    <div class="rfq-drawer-panel">
+      <div class="rfq-drawer-header">
+        <div class="rfq-header-title">
+          <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+          <h3>Enterprise RFQ Builder</h3>
+        </div>
+        <button id="closeRfqDrawer" class="drawer-close-btn" aria-label="Close Quote Drawer">&times;</button>
+      </div>
+
+      <div class="rfq-drawer-intro">
+        <p>Compile products for your bill of materials (BOM) and receive an instant itemized quotation on WhatsApp.</p>
+      </div>
+
+      <div id="rfqItemsList" class="rfq-items-list">
+        <!-- Rendered items in RFQ list -->
+      </div>
+
+      <div class="rfq-drawer-footer">
+        <div class="rfq-client-note">
+          <label for="rfqProjectName">Project / Company Name (Optional):</label>
+          <input type="text" id="rfqProjectName" placeholder="e.g. Lekki Phase 1 Project / ABC Construction">
+        </div>
+
+        <button id="sendRfqWhatsAppBtn" class="btn btn-primary btn-full btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <span>Send RFQ to WhatsApp ↗</span>
+        </button>
+
+        <div class="rfq-secondary-actions">
+          <button id="copyRfqSummaryBtn" class="btn btn-outline btn-sm">Copy RFQ Text</button>
+          <button id="clearRfqBtn" class="btn-text-danger btn-sm">Clear List</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Interactive Toast Notification -->
+  <div id="toast" class="toast-notification" aria-live="polite"></div>
+
+  <!-- Client-side Logic -->
+  <script src="/site.js"></script>
+</body>
+</html>

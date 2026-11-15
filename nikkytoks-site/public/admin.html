@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NIKKYTOKS VENTURES — Enterprise Admin Portal</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+
+  <!-- Sign In Screen -->
+  <div id="login" class="login-wrapper">
+    <div class="login-box">
+      <div class="login-brand">
+        <div class="login-logo-wrap">
+          <img src="/assets/logo.jpg" alt="NIKKYTOKS VENTURES" class="login-logo">
+        </div>
+        <h1>NIKKYTOKS VENTURES</h1>
+        <p class="login-subtitle">Enterprise Catalogue & Inventory Management Portal</p>
+      </div>
+
+      <form id="loginform" class="login-form">
+        <div class="form-group">
+          <label for="password">Admin Security Passcode</label>
+          <input id="password" type="password" placeholder="Enter administrative password..." required autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">
+          <span>Authenticate & Access Dashboard &rarr;</span>
+        </button>
+
+        <p id="loginerror" class="login-error-msg"></p>
+        
+        <div class="login-footer-hint">
+          <span>Corporate Admin &bull; RC: 3466507 &bull; Lagos, Nigeria</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Authenticated Dashboard -->
+  <div id="dashboard" class="dashboard-layout" hidden>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="sidebar-logo-frame">
+          <img src="/assets/logo.jpg" alt="NIKKYTOKS Logo" class="sidebar-logo">
+        </div>
+        <div class="sidebar-brand-text">
+          <span class="sidebar-brand-title">NIKKYTOKS</span>
+          <span class="sidebar-brand-sub">ADMIN CONSOLE</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button id="tabProducts" class="nav-btn active">
+          <span class="nav-icon"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
+          <span>Inventory Products</span>
+        </button>
+        <button id="tabSettings" class="nav-btn">
+          <span class="nav-icon"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+          <span>Site & Business Info</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/" target="_blank" class="sidebar-link-ext">
+          <span>↗ Open Customer Site</span>
+        </a>
+        <button id="logout" class="sidebar-logout-btn">
+          <span>Sign Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main">
+      <!-- Top Action Bar -->
+      <header class="dashboard-bar">
+        <div>
+          <span class="eyebrow">ENTERPRISE PORTAL</span>
+          <h1 id="heading" class="page-title">Products Inventory</h1>
+        </div>
+        <div class="bar-actions">
+          <button id="add" class="btn btn-primary">
+            <span>+ Add New Product</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- KPI Statistics Ribbon -->
+      <div class="stats-ribbon">
+        <div class="stat-card">
+          <span class="stat-label">Total Catalogue Items</span>
+          <span id="statTotalCount" class="stat-num">17</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">In-Stock & Available</span>
+          <span id="statInStockCount" class="stat-num">17</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Featured Equipment</span>
+          <span id="statFeaturedCount" class="stat-num">8</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Active Categories</span>
+          <span class="stat-num">7</span>
+        </div>
+      </div>
+
+      <!-- Products Inventory Section -->
+      <section id="productSection" class="content-panel">
+        <div class="toolbar-row">
+          <div class="search-input-wrap">
+            <input id="search" placeholder="Search equipment by title or model..." aria-label="Search products">
+          </div>
+          <div class="filter-select-wrap">
+            <select id="categoryFilter" aria-label="Filter products by category">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="products" class="products-grid">
+          <!-- Dynamically populated products -->
+        </div>
+      </section>
+
+      <!-- Site Settings Section -->
+      <section id="settingsSection" class="content-panel" hidden>
+        <div class="panel-box">
+          <div class="panel-box-header">
+            <h2>Corporate Business & Contact Information</h2>
+            <p>Update phone numbers, locations, and WhatsApp contacts displayed on the customer-facing website.</p>
+          </div>
+
+          <form id="settingsForm" class="settings-form-grid">
+            <div class="form-group">
+              <label>WhatsApp Number (International format e.g. 2348028278993)</label>
+              <input name="whatsapp" required placeholder="2348028278993">
+            </div>
+
+            <div class="form-group">
+              <label>Primary Phone</label>
+              <input name="phone" placeholder="08028278993">
+            </div>
+
+            <div class="form-group">
+              <label>Secondary / Backup Phone</label>
+              <input name="phone2" placeholder="08124002501">
+            </div>
+
+            <div class="form-group">
+              <label>Official Email Address</label>
+              <input name="email" type="email" placeholder="sales@nikkytoksventures.com">
+            </div>
+
+            <div class="form-group form-group-full">
+              <label>Operating & Showroom Hours</label>
+              <input name="hours" placeholder="Mon – Sat: 8:00 AM – 6:30 PM">
+            </div>
+
+            <div class="form-group form-group-full">
+              <label>Head Office Address</label>
+              <input name="head" placeholder="17 Ifelodun Street, Ilasamaja, Oshodi-Isolo, Lagos">
+            </div>
+
+            <div class="form-group form-group-full">
+              <label>Branch / Island Hub Address</label>
+              <input name="branch" placeholder="Shop 10, Alahun Bus Stop, Ibeju Lekki, Lagos">
+            </div>
+
+            <div class="form-group-full">
+              <button type="submit" class="btn btn-primary btn-lg">
+                <span>Save Corporate Settings</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Add / Edit Product Modal Dialog -->
+  <dialog id="modal" class="admin-dialog">
+    <div class="dialog-content">
+      <form id="productForm">
+        <div class="modal-header">
+          <h2 id="modalTitle">Add New Equipment</h2>
+          <button type="button" id="close" class="modal-close" aria-label="Close">&times;</button>
+        </div>
+
+        <div class="form-fields">
+          <div class="form-group">
+            <label>Product Name *</label>
+            <input name="name" required placeholder="e.g. Elepaq Generator 10kVA">
+          </div>
+
+          <div class="form-group">
+            <label>Manufacturer / Brand</label>
+            <input name="brand" placeholder="e.g. Elepaq / Mikano / INGCO">
+          </div>
+
+          <div class="form-group">
+            <label>Equipment Category *</label>
+            <select name="category" id="productCategory" required></select>
+          </div>
+
+          <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" rows="3" placeholder="Provide a concise customer-facing overview..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Engineering Specifications</label>
+            <textarea name="specs" rows="2" placeholder="e.g. 100% Copper Windings | Key Start | AVR | 220V/50Hz"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Product Photo (PNG, JPG, or WebP up to 3MB)</label>
+            <input name="photo" type="file" accept="image/png,image/jpeg,image/webp">
+          </div>
+
+          <div class="checkbox-row">
+            <label class="check-label">
+              <input name="featured" type="checkbox">
+              <span>Display as Featured on Homepage</span>
+            </label>
+
+            <label class="check-label">
+              <input name="available" type="checkbox" checked>
+              <span>Available in Stock</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="cancel" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Equipment Data</button>
+        </div>
+
+        <p id="formerror" class="form-error-msg"></p>
+      </form>
+    </div>
+  </dialog>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

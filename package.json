@@ -1,0 +1,13 @@
+{
+  "name": "nikkytoks-ventures",
+  "version": "1.0.0",
+  "description": "NIKKYTOKS VENTURES website",
+  "main": "nikkytoks-site/server.js",
+  "scripts": {
+    "start": "node nikkytoks-site/server.js",
+    "dev": "node nikkytoks-site/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

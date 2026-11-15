@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 50" fill="none">
+  <!-- Valvoline Iconic V-Shield Emblem -->
+  <g transform="translate(4, 5)">
+    <!-- Blue Left Chevron Wing -->
+    <path d="M4 2 L22 2 L30 22 L20 40 L4 2 Z" fill="#003882"/>
+    <!-- Red Right Chevron Wing -->
+    <path d="M22 2 L40 2 L30 22 L40 40 L20 40 L26 22 Z" fill="#DA291C"/>
+    <!-- Dynamic Negative Space Slash -->
+    <path d="M14 6 L20 6 L26 22 L18 36 L14 6 Z" fill="#FFFFFF" opacity="0.95"/>
+    <path d="M20 6 L25 6 L30 18 L26 22 Z" fill="#DA291C"/>
+  </g>
+  <!-- Valvoline Official Bold Italic Wordmark -->
+  <text x="56" y="34" font-family="'Plus Jakarta Sans', 'Arial Black', sans-serif" font-size="28" font-weight="900" font-style="italic" fill="#003882" letter-spacing="-0.5">Valvoline<tspan font-size="14" font-style="normal" font-weight="700" dy="-12" fill="#003882">&reg;</tspan></text>
+</svg>
